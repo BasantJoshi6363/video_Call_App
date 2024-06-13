@@ -1,14 +1,12 @@
 import React from 'react'
 import { ZegoUIKitPrebuilt } from '@zegocloud/zego-uikit-prebuilt';
 import { useParams } from 'react-router-dom';
-import { appId, serverSecret } from './config';
-
+import { appId, serverSecret } from './config.js';
 
 
 const Room = () => {
 
     const { roomId } = useParams()
-    console.log(appId, serverSecret)
     let myMeeting = async (element) => {
 
         const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appId, serverSecret, roomId, Date.now().toString(), "basant");
